@@ -13,13 +13,15 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+// Configura tu API key de OpenAI desde las variables de entorno
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY, // Se obtiene la clave desde las variables de entorno
 });
 const openai = new OpenAIApi(configuration);
 
+// Configurar CORS
 app.use(cors({
-    origin: 'https://www.quartzsales.com/',
+    origin: 'https://www.quartzsales.com/', // Tu dominio principal
     methods: ['GET', 'POST'],
     credentials: true
 }));
@@ -32,7 +34,7 @@ app.post('/api/chat', async (req, res) => {
 
   try {
     const response = await openai.createChatCompletion({
-      model: 'gpt-4', 
+      model: 'gpt-4', // Usa un modelo válido como 'gpt-4' o 'gpt-3.5-turbo'
       messages: [
         {
           role: 'system',
