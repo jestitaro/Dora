@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+#chat-container {
+    width: 500px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#messages {
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 80%;
+}
+
+/* Mensaje del usuario alineado a la derecha */
+.user-message {
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin-left: auto;
+    background-color: #dcf8c6;
+    padding: 10px;
+    border-radius: 15px 15px 0 15px;
+}
+
+.user-message .message-content {
+    text-align: right;
+}
+
+/* Mensaje de Dora alineado a la izquierda */
+.dora-message {
+    justify-content: flex-start;
+    align-self: flex-start;
+    margin-right: auto;
+    background-color: #f1f0f0;
+    padding: 10px;
+    border-radius: 15px 15px 15px 0;
+}
+
+.dora-message .avatar {
+    margin-right: 10px;
+}
+
+.dora-message .avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.dora-message .message-content {
+    max-width: calc(100% - 50px);
+}
+
+/* Asegurar que el contenido se ajusta correctamente */
+.message-content {
+    word-wrap: break-word;
+}
+
+.message strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#messages div {
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: calc(100% - 100px);
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#send-button {
+    width: 80px;
+    padding: 10px;
+}
